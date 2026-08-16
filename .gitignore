@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contains DB password & JWT secret)
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Uploaded files (runtime data, not source code)
+src/uploads/*
+!src/uploads/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
