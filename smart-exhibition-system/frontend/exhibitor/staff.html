@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booth Staff — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Exhibitor Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="browse-exhibitions.html">Browse Exhibitions</a>
+      <a href="my-booth.html">My Booth</a>
+      <a href="products.html">Products</a>
+      <a href="documents.html">Documents</a>
+      <a href="leads.html">Leads</a>
+      <a href="staff.html" class="active">Booth Staff</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Booth Staff</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">E</div>
+        <span id="userName">Exhibitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel" style="margin-bottom:24px; border-left:3px solid var(--copper); background:#FBF6EF;">
+        <div style="padding:16px 22px; font-size:13px; color:var(--ink-soft);">
+          <strong style="color:var(--copper);">Live feature</strong> — booth staff records are stored through the Smart Exhibition backend.
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Staff Members</h3>
+          <button class="btn btn-copper" id="openCreateModal">+ Add Staff</button>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Designation</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="staffBody">
+            <!-- rows injected by staff.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Add Staff Modal -->
+<div class="modal-overlay" id="createModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Add Staff Member</h3>
+      <button class="modal-close" id="closeCreateModal">&times;</button>
+    </div>
+    <form id="staffForm">
+      <div class="modal-body">
+        <div class="field">
+          <label for="staff_name">Full name</label>
+          <input type="text" id="staff_name" name="name" placeholder="e.g. Rohit Sharma" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="designation">Designation</label>
+            <input type="text" id="designation" name="designation" placeholder="e.g. Sales Executive">
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="Phone number">
+          </div>
+        </div>
+        <div class="field">
+          <label for="staff_email">Email</label>
+          <input type="email" id="staff_email" name="email" placeholder="staff@company.com">
+        </div>
+        <div class="error-text" id="formError"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost-light" id="cancelCreate">Cancel</button>
+        <button type="submit" class="btn btn-copper">Add Staff</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/staff.js"></script>
+</body>
+</html>

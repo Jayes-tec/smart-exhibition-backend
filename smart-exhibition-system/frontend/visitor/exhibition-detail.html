@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exhibition Details — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Visitor Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="browse-exhibitions.html" class="active">Browse Exhibitions</a>
+      <a href="my-qr.html">My QR Code</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1 id="pageTitle">Exhibition Details</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">V</div>
+        <span id="userName">Visitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel" style="margin-bottom:24px;">
+        <div style="padding:22px;" id="exhibitionMeta">
+          <!-- injected by exhibition-detail.js -->
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Halls &amp; Exhibitors</h3>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Hall</th>
+              <th>Booth</th>
+              <th>Exhibitor</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody id="hallsBody">
+            <!-- rows injected by exhibition-detail.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/exhibition-detail.js"></script>
+</body>
+</html>

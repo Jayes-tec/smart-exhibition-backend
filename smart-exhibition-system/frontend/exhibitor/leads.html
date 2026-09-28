@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leads — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Exhibitor Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="browse-exhibitions.html">Browse Exhibitions</a>
+      <a href="my-booth.html">My Booth</a>
+      <a href="products.html">Products</a>
+      <a href="documents.html">Documents</a>
+      <a href="leads.html" class="active">Leads</a>
+      <a href="staff.html">Booth Staff</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Leads</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">E</div>
+        <span id="userName">Exhibitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="stat-grid">
+        <div class="stat-card copper">
+          <div class="label">New</div>
+          <div class="value" id="statNew">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Contacted</div>
+          <div class="value" id="statContacted">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Qualified</div>
+          <div class="value" id="statQualified">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Closed</div>
+          <div class="value" id="statClosed">—</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>All Leads</h3>
+        </div>
+        <div class="toolbar">
+          <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option value="new">New</option>
+            <option value="contacted">Contacted</option>
+            <option value="qualified">Qualified</option>
+            <option value="closed">Closed</option>
+            <option value="lost">Lost</option>
+          </select>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Visitor</th>
+              <th>Interest</th>
+              <th>Product</th>
+              <th>Status</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <tbody id="leadsBody">
+            <!-- rows injected by leads.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/leads.js"></script>
+</body>
+</html>

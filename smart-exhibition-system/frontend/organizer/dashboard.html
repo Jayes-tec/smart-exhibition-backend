@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organizer Dashboard — EXHIBIT/OS</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Organizer Panel</div>
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="halls.html">Halls</a>
+      <a href="booths.html">Booths</a>
+      <a href="exhibitor-requests.html">Exhibitor Requests</a>
+      <a href="reports.html">Reports</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Dashboard</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">O</div>
+        <span id="userName">Organizer</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">Total Exhibitions</div>
+          <div class="value" id="statExhibitions">—</div>
+        </div>
+        <div class="stat-card copper">
+          <div class="label">Active Exhibitors</div>
+          <div class="value" id="statExhibitors">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Total Visitors</div>
+          <div class="value" id="statVisitors">—</div>
+        </div>
+        <div class="stat-card copper">
+          <div class="label">Pending Requests</div>
+          <div class="value" id="statPending">—</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent Exhibitions</h3>
+          <a href="exhibitions.html" class="btn btn-copper">+ New Exhibition</a>
+        </div>
+        <table class="data-table" id="exhibitionsTable">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Venue</th>
+              <th>Dates</th>
+              <th>Exhibitors</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="exhibitionsBody">
+            <!-- rows injected by organizer.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/organizer.js"></script>
+</body>
+</html>

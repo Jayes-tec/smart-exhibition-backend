@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Exhibitions — EXHIBIT/OS Admin</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Admin Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="users.html">Users</a>
+      <a href="exhibitions.html" class="active">All Exhibitions</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>All Exhibitions</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">A</div>
+        <span id="userName">Admin</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Platform-wide Exhibitions</h3>
+        </div>
+        <div class="toolbar">
+          <input type="text" id="searchInput" placeholder="Search by title, venue, or organizer...">
+          <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option value="draft">Draft</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Organizer</th>
+              <th>Venue</th>
+              <th>Dates</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="allExhibitionsBody">
+            <!-- rows injected by admin-exhibitions.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/admin-exhibitions.js"></script>
+</body>
+</html>

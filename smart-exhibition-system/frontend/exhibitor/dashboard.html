@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exhibitor Dashboard — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Exhibitor Panel</div>
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="browse-exhibitions.html">Browse Exhibitions</a>
+      <a href="my-booth.html">My Booth</a>
+      <a href="products.html">Products</a>
+      <a href="documents.html">Documents</a>
+      <a href="leads.html">Leads</a>
+      <a href="staff.html">Booth Staff</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Dashboard</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">E</div>
+        <span id="userName">Exhibitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="stat-grid">
+        <div class="stat-card copper">
+          <div class="label">Active Registrations</div>
+          <div class="value" id="statActive">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Products Listed</div>
+          <div class="value" id="statProducts">—</div>
+        </div>
+        <div class="stat-card copper">
+          <div class="label">Leads This Month</div>
+          <div class="value" id="statLeads">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Pending Approval</div>
+          <div class="value" id="statPending">—</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>My Exhibitions</h3>
+          <a href="browse-exhibitions.html" class="btn btn-copper">+ Register for New Exhibition</a>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Exhibition</th>
+              <th>Booth</th>
+              <th>Dates</th>
+              <th>Leads Collected</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="registrationsBody">
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/exhibitor.js"></script>
+</body>
+</html>

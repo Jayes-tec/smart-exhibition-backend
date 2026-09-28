@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Documents — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Exhibitor Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="browse-exhibitions.html">Browse Exhibitions</a>
+      <a href="my-booth.html">My Booth</a>
+      <a href="products.html">Products</a>
+      <a href="documents.html" class="active">Documents</a>
+      <a href="leads.html">Leads</a>
+      <a href="staff.html">Booth Staff</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Documents</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">E</div>
+        <span id="userName">Exhibitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel" style="margin-bottom:24px;">
+        <div class="panel-head">
+          <h3>Upload New Document</h3>
+        </div>
+        <form id="uploadForm" style="padding:22px;">
+          <div class="field-row">
+            <div class="field">
+              <label for="doc_title">Title</label>
+              <input type="text" id="doc_title" name="title" placeholder="e.g. Product Catalog 2026" required>
+            </div>
+            <div class="field">
+              <label for="file_type">File type</label>
+              <select id="file_type" name="file_type">
+                <option value="pdf">PDF</option>
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+                <option value="doc">Doc</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="file_upload">File</label>
+            <input type="file" id="file_upload" name="file_upload">
+          </div>
+          <div class="error-text" id="uploadError"></div>
+          <button type="submit" class="btn btn-copper">Upload</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Uploaded Documents</h3>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Type</th>
+              <th>Uploaded</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="documentsBody">
+            <!-- rows injected by documents.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/documents.js"></script>
+</body>
+</html>

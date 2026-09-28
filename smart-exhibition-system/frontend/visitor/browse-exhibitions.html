@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Exhibitions — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Visitor Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="browse-exhibitions.html" class="active">Browse Exhibitions</a>
+      <a href="my-qr.html">My QR Code</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Browse Exhibitions</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">V</div>
+        <span id="userName">Visitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel" style="margin-bottom:24px;">
+        <div class="toolbar" style="border-bottom:none;">
+          <input type="text" id="searchInput" placeholder="Search by title, venue, or city...">
+          <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="exhibitionsGrid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;">
+        <!-- cards injected by browse-visitor.js -->
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/browse-visitor.js"></script>
+</body>
+</html>

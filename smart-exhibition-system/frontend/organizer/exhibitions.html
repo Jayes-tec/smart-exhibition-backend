@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exhibitions — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Organizer Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="exhibitions.html" class="active">Exhibitions</a>
+      <a href="halls.html">Halls</a>
+      <a href="booths.html">Booths</a>
+      <a href="exhibitor-requests.html">Exhibitor Requests</a>
+      <a href="reports.html">Reports</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Exhibitions</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">O</div>
+        <span id="userName">Organizer</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>All Exhibitions</h3>
+          <button class="btn btn-copper" id="openCreateModal">+ New Exhibition</button>
+        </div>
+
+        <div class="toolbar">
+          <input type="text" id="searchInput" placeholder="Search by title or venue...">
+          <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option value="draft">Draft</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="ongoing">Ongoing</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Venue</th>
+              <th>Dates</th>
+              <th>Exhibitors</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="exhibitionsBody">
+            <!-- rows injected by exhibitions.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Create Exhibition Modal -->
+<div class="modal-overlay" id="createModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Create New Exhibition</h3>
+      <button class="modal-close" id="closeCreateModal">&times;</button>
+    </div>
+    <form id="createExhibitionForm">
+      <div class="modal-body">
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" placeholder="e.g. TechXpo Indore 2026" required>
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="3" placeholder="What's this exhibition about?"></textarea>
+        </div>
+        <div class="field">
+          <label for="venue">Venue</label>
+          <input type="text" id="venue" name="venue" placeholder="e.g. Brilliant Convention Centre" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="start_date">Start date</label>
+            <input type="date" id="start_date" name="start_date" required>
+          </div>
+          <div class="field">
+            <label for="end_date">End date</label>
+            <input type="date" id="end_date" name="end_date" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="status">Status</label>
+          <select id="status" name="status">
+            <option value="draft">Draft</option>
+            <option value="upcoming">Upcoming</option>
+          </select>
+        </div>
+        <div class="error-text" id="createFormError"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost-light" id="cancelCreate">Cancel</button>
+        <button type="submit" class="btn btn-copper">Create Exhibition</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/exhibitions.js"></script>
+</body>
+</html>

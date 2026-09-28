@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Admin Panel</div>
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="users.html">Users</a>
+      <a href="exhibitions.html">All Exhibitions</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Platform Overview</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">A</div>
+        <span id="userName">Admin</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="label">Total Users</div>
+          <div class="value" id="statUsers">—</div>
+        </div>
+        <div class="stat-card copper">
+          <div class="label">Total Exhibitions</div>
+          <div class="value" id="statExhibitions">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Total Exhibitors</div>
+          <div class="value" id="statExhibitors">—</div>
+        </div>
+        <div class="stat-card copper">
+          <div class="label">Total Visitors</div>
+          <div class="value" id="statVisitors">—</div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:24px;">
+        <div class="panel-head">
+          <h3>Users by Role</h3>
+        </div>
+        <div style="padding:22px; display:flex; gap:16px; flex-wrap:wrap;" id="roleBreakdown">
+          <!-- injected by admin.js -->
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Recent Platform Activity</h3>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Event</th>
+              <th>Actor</th>
+              <th>Details</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="activityBody">
+            <!-- injected by admin.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

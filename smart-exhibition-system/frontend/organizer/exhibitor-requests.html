@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exhibitor Requests — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Organizer Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="halls.html">Halls</a>
+      <a href="booths.html">Booths</a>
+      <a href="exhibitor-requests.html" class="active">Exhibitor Requests</a>
+      <a href="reports.html">Reports</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Exhibitor Requests</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">O</div>
+        <span id="userName">Organizer</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="stat-grid">
+        <div class="stat-card copper">
+          <div class="label">Pending</div>
+          <div class="value" id="statPending">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Confirmed</div>
+          <div class="value" id="statConfirmed">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Rejected</div>
+          <div class="value" id="statRejected">—</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>All Requests</h3>
+        </div>
+
+        <div class="toolbar">
+          <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="rejected">Rejected</option>
+          </select>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Business Role</th>
+              <th>Exhibition</th>
+              <th>Requested Booth</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="requestsBody">
+            <!-- rows injected by exhibitor-requests.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/exhibitor-requests.js"></script>
+</body>
+</html>

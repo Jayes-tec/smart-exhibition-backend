@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+<style>
+  .star-input { display:flex; gap:6px; font-size:28px; cursor:pointer; }
+  .star-input span { color:#D8E2EC; transition:color .1s ease; }
+  .star-input span.active { color:var(--copper); }
+</style>
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Visitor Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="browse-exhibitions.html">Browse Exhibitions</a>
+      <a href="my-qr.html">My QR Code</a>
+      <a href="feedback.html" class="active">Feedback</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Feedback</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">V</div>
+        <span id="userName">Visitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel" style="margin-bottom:24px;">
+        <div class="panel-head">
+          <h3>Leave Feedback</h3>
+        </div>
+        <form id="feedbackForm" style="padding:22px;">
+          <div class="field">
+            <label for="exhibition_select">Exhibition</label>
+            <select id="exhibition_select" name="exhibition_id" required>
+              <!-- options injected by feedback.js -->
+            </select>
+          </div>
+          <div class="field">
+            <label>Rating</label>
+            <div class="star-input" id="starInput">
+              <span data-value="1">★</span>
+              <span data-value="2">★</span>
+              <span data-value="3">★</span>
+              <span data-value="4">★</span>
+              <span data-value="5">★</span>
+            </div>
+            <input type="hidden" id="rating" name="rating" value="0">
+          </div>
+          <div class="field">
+            <label for="review">Review</label>
+            <textarea id="review" name="review" rows="3" placeholder="How was your experience?"></textarea>
+          </div>
+          <div class="error-text" id="feedbackError"></div>
+          <button type="submit" class="btn btn-copper">Submit Feedback</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Your Past Feedback</h3>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Exhibition</th>
+              <th>Rating</th>
+              <th>Review</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="feedbackBody">
+            <!-- rows injected by feedback.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/feedback.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign up — Exhibition Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" style="text-decoration:none;">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+  </a>
+  <div class="links">
+    <a href="login.html" class="btn-outline">Log in</a>
+  </div>
+</nav>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="eyebrow">Get started</div>
+    <h1>Create an account</h1>
+    <p class="sub">Choose your role — the form adjusts to what we need from you.</p>
+
+    <form id="signupForm">
+      <div class="role-select">
+        <input type="radio" name="role" id="role-organizer" value="organizer" checked>
+        <label for="role-organizer">Organizer</label>
+
+        <input type="radio" name="role" id="role-exhibitor" value="exhibitor">
+        <label for="role-exhibitor">Exhibitor</label>
+
+        <input type="radio" name="role" id="role-visitor" value="visitor">
+        <label for="role-visitor">Visitor</label>
+      </div>
+
+      <div class="field">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="At least 8 characters" minlength="8" required>
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+      </div>
+
+      <!-- Organizer-specific fields -->
+      <div class="conditional-fields active" id="fields-organizer">
+        <div class="field">
+          <label for="organization_name">Organization name</label>
+          <input type="text" id="organization_name" name="organization_name" placeholder="e.g. Apex Expo Group">
+        </div>
+        <div class="field">
+          <label for="org_city">City</label>
+          <input type="text" id="org_city" name="city" placeholder="e.g. Indore">
+        </div>
+      </div>
+
+      <!-- Exhibitor-specific fields -->
+      <div class="conditional-fields" id="fields-exhibitor">
+        <div class="field">
+          <label for="business_role">Applying as</label>
+          <select id="business_role" name="business_role">
+            <option value="manufacturer">Manufacturer</option>
+            <option value="distributor">Distributor / Wholesaler</option>
+            <option value="retailer">Retailer / Reseller</option>
+            <option value="service_provider">Service Provider</option>
+            <option value="startup">Startup</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="company_name">Business you're representing</label>
+          <input type="text" id="company_name" name="company_name" placeholder="e.g. Samsung Electronics">
+        </div>
+        <div class="field">
+          <label for="industry">Industry / product category</label>
+          <input type="text" id="industry" name="industry" placeholder="e.g. Consumer Electronics">
+        </div>
+        <div class="field">
+          <label for="gst_number">GST number</label>
+          <input type="text" id="gst_number" name="gst_number" placeholder="Optional">
+        </div>
+      </div>
+
+      <!-- Visitor-specific fields -->
+      <div class="conditional-fields" id="fields-visitor">
+        <div class="field">
+          <label for="visitor_company">Company / organization</label>
+          <input type="text" id="visitor_company" name="company" placeholder="Where you work (optional)">
+        </div>
+        <div class="field">
+          <label for="designation">Designation</label>
+          <input type="text" id="designation" name="designation" placeholder="e.g. Procurement Manager">
+        </div>
+        <div class="field">
+          <label for="purpose">What are you here for?</label>
+          <select id="purpose" name="purpose">
+            <option value="sourcing">Sourcing / buying products</option>
+            <option value="networking">Business networking</option>
+            <option value="investment">Investment opportunities</option>
+            <option value="media">Media / press</option>
+            <option value="exploring">Just exploring</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="interested_categories">Interested categories</label>
+          <input type="text" id="interested_categories" name="interested_categories" placeholder="e.g. Electronics, Textiles">
+        </div>
+      </div>
+
+      <div class="error-text" id="formError"></div>
+      <button type="submit" class="btn btn-copper btn-full" style="margin-top:6px;">Create account</button>
+    </form>
+
+    <div class="form-footer">
+      Already have an account? <a href="login.html">Log in</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

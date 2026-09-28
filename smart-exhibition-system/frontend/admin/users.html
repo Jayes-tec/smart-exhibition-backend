@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Users — EXHIBIT/OS Admin</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Admin Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="users.html" class="active">Users</a>
+      <a href="exhibitions.html">All Exhibitions</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Users</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">A</div>
+        <span id="userName">Admin</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>All Users</h3>
+        </div>
+        <div class="toolbar">
+          <input type="text" id="searchInput" placeholder="Search by name or email...">
+          <select id="roleFilter">
+            <option value="">All roles</option>
+            <option value="organizer">Organizer</option>
+            <option value="exhibitor">Exhibitor</option>
+            <option value="visitor">Visitor</option>
+          </select>
+          <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+            <option value="banned">Banned</option>
+          </select>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Joined</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="usersBody">
+            <!-- rows injected by admin-users.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/admin-users.js"></script>
+</body>
+</html>

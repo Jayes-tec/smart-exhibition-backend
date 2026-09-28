@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halls — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Organizer Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="halls.html" class="active">Halls</a>
+      <a href="booths.html">Booths</a>
+      <a href="exhibitor-requests.html">Exhibitor Requests</a>
+      <a href="reports.html">Reports</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Halls</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">O</div>
+        <span id="userName">Organizer</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Halls by Exhibition</h3>
+          <button class="btn btn-copper" id="openCreateModal">+ New Hall</button>
+        </div>
+
+        <div class="toolbar">
+          <select id="exhibitionFilter">
+            <!-- options injected by halls.js -->
+          </select>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Hall Name</th>
+              <th>Hall Number</th>
+              <th>Floor</th>
+              <th>Booths</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="hallsBody">
+            <!-- rows injected by halls.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Create Hall Modal -->
+<div class="modal-overlay" id="createModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3>Add New Hall</h3>
+      <button class="modal-close" id="closeCreateModal">&times;</button>
+    </div>
+    <form id="createHallForm">
+      <div class="modal-body">
+        <div class="field">
+          <label for="exhibition_id">Exhibition</label>
+          <select id="exhibition_id" name="exhibition_id" required>
+            <!-- options injected by halls.js -->
+          </select>
+        </div>
+        <div class="field">
+          <label for="hall_name">Hall name</label>
+          <input type="text" id="hall_name" name="hall_name" placeholder="e.g. Hall A" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="hall_number">Hall number</label>
+            <input type="text" id="hall_number" name="hall_number" placeholder="e.g. A-1">
+          </div>
+          <div class="field">
+            <label for="floor">Floor</label>
+            <input type="text" id="floor" name="floor" placeholder="e.g. Ground Floor">
+          </div>
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <input type="text" id="description" name="description" placeholder="Optional notes">
+        </div>
+        <div class="error-text" id="createFormError"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost-light" id="cancelCreate">Cancel</button>
+        <button type="submit" class="btn btn-copper">Add Hall</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/halls.js"></script>
+</body>
+</html>

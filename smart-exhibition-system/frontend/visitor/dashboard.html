@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visitor Dashboard — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Visitor Panel</div>
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="browse-exhibitions.html">Browse Exhibitions</a>
+      <a href="my-qr.html">My QR Code</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Dashboard</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">V</div>
+        <span id="userName">Visitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="stat-grid">
+        <div class="stat-card copper">
+          <div class="label">Saved Exhibitions</div>
+          <div class="value" id="statSaved">—</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Exhibitions Attended</div>
+          <div class="value" id="statAttended">—</div>
+        </div>
+        <div class="stat-card copper">
+          <div class="label">Booths Visited</div>
+          <div class="value" id="statBooths">—</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>My Exhibitions</h3>
+          <a href="browse-exhibitions.html" class="btn btn-copper">Browse Exhibitions</a>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Exhibition</th>
+              <th>Venue</th>
+              <th>Dates</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="myExhibitionsBody">
+            <!-- rows injected by visitor.js -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/visitor.js"></script>
+</body>
+</html>

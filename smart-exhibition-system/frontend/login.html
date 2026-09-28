@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log in — Exhibition Management System</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" style="text-decoration:none;">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+  </a>
+  <div class="links">
+    <a href="signup.html" class="btn-outline">Sign up</a>
+  </div>
+</nav>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="eyebrow">Welcome back</div>
+    <h1>Log in</h1>
+    <p class="sub">Enter your details to reach your dashboard.</p>
+
+    <form id="loginForm">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@company.com" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required>
+      </div>
+      <div class="error-text" id="formError"></div>
+      <button type="submit" class="btn btn-copper btn-full">Sign in</button>
+    </form>
+
+    <div class="form-footer">
+      Don't have an account? <a href="signup.html">Create one</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

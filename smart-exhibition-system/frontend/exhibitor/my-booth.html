@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Booth — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Exhibitor Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="browse-exhibitions.html">Browse Exhibitions</a>
+      <a href="my-booth.html" class="active">My Booth</a>
+      <a href="products.html">Products</a>
+      <a href="documents.html">Documents</a>
+      <a href="leads.html">Leads</a>
+      <a href="staff.html">Booth Staff</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>My Booth</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">E</div>
+        <span id="userName">Exhibitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body" id="boothBody">
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/my-booth.js"></script>
+</body>
+</html>

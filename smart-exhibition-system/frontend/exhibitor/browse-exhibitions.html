@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Exhibitions — EXHIBIT/OS</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="dot"></span> EXHIBIT/OS</div>
+    <div class="role-tag">Exhibitor Panel</div>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="browse-exhibitions.html" class="active">Browse Exhibitions</a>
+      <a href="my-booth.html">My Booth</a>
+      <a href="products.html">Products</a>
+      <a href="documents.html">Documents</a>
+      <a href="leads.html">Leads</a>
+      <a href="staff.html">Booth Staff</a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="../login.html" class="logout-link">← Log out</a>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <h1>Browse Exhibitions</h1>
+      <div class="user-chip">
+        <div class="avatar" id="userInitial">E</div>
+        <span id="userName">Exhibitor</span>
+      </div>
+    </div>
+
+    <div class="dash-body">
+
+      <div class="panel" style="margin-bottom:24px;">
+        <div class="toolbar" style="border-bottom:none;">
+          <input type="text" id="searchInput" placeholder="Search by title or venue...">
+          <select id="statusFilter">
+            <option value="">All statuses</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="ongoing">Ongoing</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="role-grid" id="exhibitionsGrid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px;">
+        <!-- cards injected by browse-exhibitions.js -->
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- Register/Apply Modal -->
+<div class="modal-overlay" id="applyModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <h3 id="applyModalTitle">Register for Exhibition</h3>
+      <button class="modal-close" id="closeApplyModal">&times;</button>
+    </div>
+    <form id="applyForm">
+      <div class="modal-body">
+        <div class="field">
+          <label for="booth_choice">Preferred booth</label>
+          <select id="booth_choice" name="booth_choice">
+            <!-- options injected by browse-exhibitions.js -->
+          </select>
+        </div>
+        <div class="field">
+          <label for="business_role">Applying as</label>
+          <select id="business_role" name="business_role">
+            <option value="manufacturer">Manufacturer</option>
+            <option value="distributor">Distributor / Wholesaler</option>
+            <option value="retailer">Retailer / Reseller</option>
+            <option value="service_provider">Service Provider</option>
+            <option value="startup">Startup</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="note">Note to organizer (optional)</label>
+          <textarea id="note" name="note" rows="3" placeholder="Anything the organizer should know?"></textarea>
+        </div>
+        <div class="error-text" id="applyFormError"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost-light" id="cancelApply">Cancel</button>
+        <button type="submit" class="btn btn-copper">Submit Application</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/browse-exhibitions.js"></script>
+</body>
+</html>
